@@ -1,0 +1,48 @@
+page-admin {
+
+    ion-header {
+      ion-toolbar {
+        --background: #3880ff;
+        color: white;
+      }
+      ion-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  
+    ion-content {
+      ion-list {
+        ion-item {
+          ion-thumbnail {
+            width: 70px;
+            height: 70px;
+            img {
+              max-width: 100%;
+              max-height: 100%;
+              border-radius: 8px;
+            }
+          }
+          ion-label {
+            .ion-text-wrap {
+              white-space: normal;
+            }
+            h2 {
+              font-size: 1.2rem;
+              margin-bottom: 4px;
+            }
+            p {
+              font-size: 0.9rem;
+              color: #666;
+            }
+          }
+          ion-buttons {
+            ion-button {
+              margin-left: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Panel de Administración</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToProductCreate()">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let product of products">
+      <ion-thumbnail slot="start">
+        <img [src]="product.imageUrl" alt="Producto">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ product.name }}</h2>
+        <p>Precio: {{ product.price | currency:'USD':'symbol':'1.2-2' }}</p>
+        <p>Stock: {{ product.stock }}</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button color="primary" (click)="goToProductUpdate(product.id)">
+          <ion-icon slot="icon-only" name="create"></ion-icon>
+        </ion-button>
+        <ion-button color="danger" (click)="deleteProduct(product.id)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>
